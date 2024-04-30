@@ -1,0 +1,94 @@
+:root{
+    background: #111111;
+    
+}
+
+.title{
+    color: whitesmoke;
+    text-align: center;
+    margin: 2rem;
+}
+
+.param{
+    color: rgb(189, 186, 186);
+    text-align: center;
+    padding: 0.2rem;
+    margin-bottom: 2rem;
+}
+
+.input_todo{
+    background-color: #1b1b1b;
+    opacity: 20%;
+    width: relative;
+    height: 5rem;
+    margin-inline: 2rem;
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:10px;
+    grid-auto-rows: minmax(minmax, auto);
+
+}
+
+.todo_num{
+    color: whitesmoke;
+    height: auto;
+    width: 5rem;
+    margin-inline:auto ;
+    align-items: center;
+}
+
+.num{
+    justify-content: center;
+    padding:none;
+    display: block;
+}
+
+
+.todo_text{
+    color: whitesmoke;
+    height: auto;
+    width: auto;
+    margin-inline:.2rem ;
+    text-align: center;
+    align-content: center;
+}
+
+.input{
+    border:none;
+    color: whitesmoke;;
+    background-color: #111111;
+    width: 30rem;
+    height: 2rem;
+    border-radius: .2rem;
+}
+
+.list_todo{
+    background-color: #221919;
+    opacity: 45%;
+    width: relative;
+    height: auto;
+    margin-inline: 0.5rem;
+    border-radius: .8rem;
+}
+
+.enter_button{
+    width: 5rem;
+    height: 2.5rem;
+    align-self: center;
+    margin-inline: auto;
+    border-radius: .3rem;
+}
+
+.todo_data{
+    color: whitesmoke;
+    height: auto;
+    width: auto;
+    margin-inline:.2rem ;
+    text-align: center;
+    align-content: center;
+}
+
+
+
+
+
