@@ -1,91 +1,131 @@
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/enter.css');
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/trash.css');
+
 :root{
-    background: #111111;
-    
+    background: #1f1f1f;
+    font-family: "Caveat", cursive;
+    font-style: normal;
 }
 
 .title{
-    color: whitesmoke;
+    color: rgb(199, 199, 199);
     text-align: center;
+    padding-top: 2rem;
     margin: 2rem;
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
-.param{
-    color: rgb(189, 186, 186);
-    text-align: center;
-    padding: 0.2rem;
-    margin-bottom: 2rem;
-}
-
-.input_todo{
-    background-color: #1b1b1b;
-    opacity: 20%;
-    width: relative;
-    height: 5rem;
-    margin-inline: 2rem;
-    display: grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:10px;
-    grid-auto-rows: minmax(minmax, auto);
-
-}
-
-.todo_num{
-    color: whitesmoke;
-    height: auto;
-    width: 5rem;
-    margin-inline:auto ;
-    align-items: center;
-}
-
-.num{
-    justify-content: center;
-    padding:none;
-    display: block;
-}
-
-
-.todo_text{
-    color: whitesmoke;
-    height: auto;
+.div_input_toDo{
+    height: 4rem;
     width: auto;
-    margin-inline:.2rem ;
-    text-align: center;
+    min-width: 30rem;
+    max-width: 50rem;
+    margin: auto;
     align-content: center;
 }
 
-.input{
-    border:none;
-    color: whitesmoke;;
-    background-color: #111111;
-    width: 30rem;
-    height: 2rem;
-    border-radius: .2rem;
-}
-
-.list_todo{
-    background-color: #221919;
-    opacity: 45%;
-    width: relative;
-    height: auto;
-    margin-inline: 0.5rem;
-    border-radius: .8rem;
-}
-
-.enter_button{
-    width: 5rem;
+.input_toDO{
+    margin-left: 5rem;
     height: 2.5rem;
-    align-self: center;
-    margin-inline: auto;
-    border-radius: .3rem;
+    width: 35rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #363636;
+    color: whitesmoke;
+    font-family: "Caveat", cursive;
+    font-style: normal;
+    font-size: 3ch;
 }
 
-.todo_data{
+.button_input_enter{
+    margin-left: 0.5rem;
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: #18181800;
+    color: rgb(107, 105, 105);
+}
+
+.button_input_enter:hover{
+    color: rgb(196, 196, 196);
+}
+
+.button_input_enter:active{
+    color: rgb(228, 136, 136);
+}
+
+.div_container_toDo_list{
+    min-height: 50rem;
+    max-height: 55rem;
+    min-width: 30rem;
+    max-width: 60rem;
+    margin-inline: auto;
+    padding-block: 1rem;
+    border-radius: 0.5rem;
+    background-color: #1B1B1B;
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.div_toDo_component{
+    height:auto;
+    margin-inline: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    background-color: #3332325b;
+    border-radius: 0.5rem;
+}
+
+.text_toDo{
+    height:auto;
+    width: 46rem;
+    padding-right: 2rem;
+    margin-left: 2rem;
+    border-radius: 0.5rem;
     color: whitesmoke;
-    height: auto;
-    width: auto;
-    margin-inline:.2rem ;
-    text-align: center;
-    align-content: center;
+    font-size: 3ch;
+    text-wrap: wrap;
+    overflow-y: auto;
+}
+
+.check_toDo{
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-inline: 0.8rem;
+    margin-block: auto;
+
+    border-radius: .5rem;
+    border: none;
+    background-color: #18181800;
+    color: #9c9c9c;
+}
+.check_toDo:hover{
+    color: #cfcdcdc9;
+}
+
+.button_delate_toDo{
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-block:auto;
+    margin-right: 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #3d3d3d00;
+    color: rgba(221, 155, 155, 0.644);
+}
+.button_delate_toDo:hover{
+    color: rgba(180, 93, 93, 0.774);
+}
+
+.button_delate_toDo:active{
+    color: rgba(184, 63, 63, 0.808);  
 }
 
 
