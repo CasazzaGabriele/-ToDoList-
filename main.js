@@ -62,7 +62,7 @@ function Create_html_Todo_Element(todo){
     object_Todo.button_check.html.addEventListener("click", (event) =>{
         object_Todo.button_check.isDone = !object_Todo.button_check.isDone
         if(object_Todo.button_check.isDone){
-            object_Todo.div_container_element.html.style.backgroundColor ='red';
+            object_Todo.div_container_element.html.style.backgroundColor =' rgba(143, 20, 20, 0.808)';
             object_Todo.paragraf.html.style.textDecoration ='line-through';
         }
         else{
