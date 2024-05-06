@@ -20,14 +20,16 @@
 .div_input_toDo{
     height: 4rem;
     width: auto;
-    min-width: 30rem;
+    min-width: 10rem;
     max-width: 50rem;
     margin: auto;
     align-content: center;
+    display: flex;
 }
 
 .input_toDO{
     margin-left: 5rem;
+    margin-block: auto;
     height: 2.5rem;
     width: 35rem;
     border: none;
@@ -41,6 +43,7 @@
 
 .button_input_enter{
     margin-left: 0.5rem;
+    margin-block:auto;
     height: 1.8rem;
     width: 1.8rem;
     border-radius: 0.5rem;
