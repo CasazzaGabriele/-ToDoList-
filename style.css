@@ -110,8 +110,12 @@
     color: #9c9c9c;
 }
 .check_toDo:hover{
-    color: #cfcdcdc9;
+    color: #338330c9;
 }
+.check_toDo:active{
+    color: #1a8111c9;
+}
+
 
 .button_delate_toDo{
     height: 1.5rem;
@@ -128,7 +132,7 @@
 }
 
 .button_delate_toDo:active{
-    color: rgba(184, 63, 63, 0.808);  
+    color: rgba(170, 40, 40, 0.808);  
 }
 
 
