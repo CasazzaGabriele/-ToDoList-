@@ -1,7 +1,7 @@
 import './style.css'
 
 const button = document.getElementById("button_input_enter")
-const input_field = document.getElementById("input_toDO")
+const input_filed = document.getElementById("input_toDO")
 const toDo_Container = document.getElementById("div_container_toDo_list")
 let toDo_list = []
 
@@ -81,30 +81,33 @@ function Create_html_Todo_Element(todo){
 }
 
 button.addEventListener("click",(event)=>{
-    // IS THE INPUT FILLED ?
-    if(input_field.value != "" ){
-        // IS THE LIST FILLED ?
-        if (toDo_list.length != 0){
-            for (var element of toDo_list){
-                if (element.paragraf.text != input_field.value){ 
-                    console.log(input_field.value)
-                    toDo_list.push(Create_html_Todo_Element(input_field.value)) 
-                    console.log(toDo_list) 
-                    input_field.value = ""
+    // IS THE INPUT FILLED?
+    if( input_filed.value != "" ){
+        //IS THE LIST FILLED
+        if ( toDo_list.length != 0){
+            // THEN SCROLL THE LIST
+            for ( const object of toDo_list){
+                // IF THERE'S ALREADY ANOTHER ITEMS WITH THE SAME TEXT EXIT
+                if( object.paragraf.text == input_filed.value){
+                    input_filed.value = ""
                     return null
                 }
             }
+            // IF THERE ISN'T ANY ITEMS WITH THE SAME TEXT VAUE
+            // CREATE A NEW ONE AND PUSHI IT INTO THE LIST
+            var newObject_Todo = Create_html_Todo_Element(input_filed.value)
+            toDo_list.push(newObject_Todo)   
+
         }
+        // IS THELIST EMPTY
+        // CREATE A NEW ONE AND PUSHI IT INTO THE LIST
         else{
-            toDo_list.push(Create_html_Todo_Element(input_field.value))    
-            console.log(toDo_list)  
-            input_field.value = ""
-            return null
+            var newObject_Todo = Create_html_Todo_Element(input_filed.value)
+            toDo_list.push(newObject_Todo) 
         }
-        
     }else{
-        input_field.value = ""
-        return null
+        input_filed.value = ""
     }
+    input_filed.value = ""
 });
      

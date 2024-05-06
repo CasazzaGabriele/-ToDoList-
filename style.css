@@ -17,6 +17,10 @@
     font-style: normal;
 }
 
+.title:hover{
+    color: rgb(197, 175, 175);
+}
+
 .div_input_toDo{
     height: 4rem;
     width: auto;
