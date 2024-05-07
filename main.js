@@ -64,10 +64,12 @@ function Create_html_Todo_Element(todo){
         if(object_Todo.button_check.isDone){
             object_Todo.div_container_element.html.style.backgroundColor =' rgba(143, 20, 20, 0.808)';
             object_Todo.paragraf.html.style.textDecoration ='line-through';
+            object_Todo.icon_check.html.style.color ='#1a8111'
         }
         else{
             object_Todo.div_container_element.html.style.backgroundColor = '#3332325b';
             object_Todo.paragraf.html.style.textDecoration ='none';
+            object_Todo.icon_check.html.style.color ='#9c9c9c'
             }
     })
 

@@ -1,9 +1,16 @@
 import express from 'express'
 
 const app = express()
-const port = 3000
+const port = 5000
 
-app.get('/', (req, res) => {
+app.use(corse())
+app.use(bodyParser.jason())
+
+app.use((res,req,next)=>{
+  console.log(" è arrivata una richiesta")
+  next()
+})
+app.get('/hello', (req, res, next) => {
   res.send('Hello World!')
 })
 
