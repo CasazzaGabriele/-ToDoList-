@@ -60,7 +60,7 @@
 }
 
 .button_input_enter:active{
-    color: rgb(228, 136, 136);
+    color: rgb(89, 148, 84);
 }
 
 .div_container_toDo_list{
@@ -92,7 +92,7 @@
 
 .text_toDo{
     height:auto;
-    width: 90%;
+    width: 80%;
     margin-right: 2rem;
     margin-left: 2rem;
     border-radius: 0.5rem;
@@ -111,15 +111,25 @@
     border-radius: .5rem;
     border: none;
     background-color: #18181800;
-    color: #9c9c9c;
+    color: #338330c9;
 }
 .check_toDo:hover{
-    color: #338330c9;
+    color: #09c506c9;
 }
 .check_toDo:active{
     color: #1a8111c9;
 }
 
+.button_checkItDoing{
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: auto;
+    background-color: #3d3d3d00;
+    border: none;
+    color: #c58838;
+}
+
+/* missing loadbar style*/
 
 .button_delate_toDo{
     height: 1.5rem;
@@ -130,14 +140,15 @@
     border: none;
     border-radius: 0.5rem;
     background-color: #3d3d3d00;
-    color: rgba(221, 155, 155, 0.644);
+    color: rgb(99, 19, 19);  
+   
 }
 .button_delate_toDo:hover{
-    color: rgba(180, 93, 93, 0.774);
+    color: rgba(150, 27, 27, 0.774);
 }
 
 .button_delate_toDo:active{
-    color: rgba(122, 29, 29, 0.808);  
+    color: rgba(194, 0, 0, 0.644);  
 }
 
 

@@ -10,22 +10,43 @@ let toDo_list = []
 //----------------------------------- FUNCTIO ------------------------------------------
 
 // FORMATTING THE STYLE OF THE TODO IN HTML
-const formatting_Html_ToDO = (toDo_obj) => {
-    toDo_obj.button_check.isDone = !toDo_obj.button_check.isDone
-        if(toDo_obj.button_check.isDone){
-            toDo_obj.div_container_element.html.style.backgroundColor =' rgba(143, 20, 20, 0.808)';
-            toDo_obj.paragraf.html.style.textDecoration ='line-through';
-            toDo_obj.icon_check.html.style.color ='#1a8111'
-        }
-        else{
-            toDo_obj.div_container_element.html.style.backgroundColor = '#3332325b';
-            toDo_obj.paragraf.html.style.textDecoration ='none';
-            toDo_obj.icon_check.html.style.color ='#9c9c9c'
-            }
+const MarkToDoAsDOING = (toDo_obj) => {
+    // Checking if the TODo is already marked as Done and if si doing false
+    if((toDo_obj.button_checkItDone.isDone || !toDo_obj.button_checkItDone.isDone) && !toDo_obj.button_checkItDoing.isItProcessing)
+    {
+        toDo_obj.paragraf.html.style.textDecoration ='none';
+        toDo_obj.button_checkItDone.isDone = false
+        toDo_obj.button_checkItDoing.isItProcessing = true
+        toDo_obj.div_container_element.html.style.backgroundColor = " #b86b13"
+        toDo_obj.icon_loadBar.html.style.color = "#f58b00"
+    }
+    else if((toDo_obj.button_checkItDone.isDone || !toDo_obj.button_checkItDone.isDone) && toDo_obj.button_checkItDoing.isItProcessing){
+        toDo_obj.button_checkItDoing.isItProcessing = false
+        toDo_obj.div_container_element.html.style.backgroundColor = " #3332325b"
+        toDo_obj.icon_loadBar.html.style.color = "#9b6520"
+    }
+
+
+}
+
+const MarkToDoAsDONE = (toDo_obj) => {
+    if ((toDo_obj.button_checkItDoing.isItProcessing || !toDo_obj.button_checkItDoing.isItProcessing) && !toDo_obj.button_checkItDone.isDone){
+        toDo_obj.button_checkItDoing.isItProcessing = false
+        toDo_obj.button_checkItDone.isDone = true
+        toDo_obj.div_container_element.html.style.backgroundColor =' rgba(143, 20, 20, 0.808)';
+        toDo_obj.paragraf.html.style.textDecoration ='line-through';
+        toDo_obj.icon_check.html.style.color ='#1a8111'
+    }
+    else if ((toDo_obj.button_checkItDoing.isItProcessing || !toDo_obj.button_checkItDoing.isItProcessing) && toDo_obj.button_checkItDone.isDone){
+        toDo_obj.button_checkItDone.isDone = false
+        toDo_obj.div_container_element.html.style.backgroundColor = '#3332325b';
+        toDo_obj.paragraf.html.style.textDecoration ='none';
+        toDo_obj.icon_check.html.style.color ='#338330c9'
+    }
 }
 
 // CREATING THE TODO ELMENT HTML
-const  Create_html_Todo_Element= (todo) =>{  
+function  Create_html_Todo_Element(todo){  
 
     let object_Todo = {
         div_container_element: {
@@ -35,12 +56,19 @@ const  Create_html_Todo_Element= (todo) =>{
             html:     document.createElement("p"),
             text:     todo
             },
-        button_check: {
+        button_checkItDone: {
             html:     document.createElement("button"),
             isDone:    false
             },
         icon_check:   {
             html:     document.createElement("span"),
+            },
+        button_checkItDoing:{
+            html:           document.createElement("button"),
+            isItProcessing: false
+            },
+        icon_loadBar:{
+            html:      document.createElement("i"),
             },
         button_delate: {
             html:      document.createElement("button"),
@@ -60,13 +88,22 @@ const  Create_html_Todo_Element= (todo) =>{
     object_Todo.div_container_element.html.appendChild(object_Todo.paragraf.html)
 
     // BUTTON_CHECK
-    object_Todo.button_check.html.className = "check_toDo"
-    object_Todo.div_container_element.html.appendChild(object_Todo.button_check.html)
+    object_Todo.button_checkItDone.html.className = "check_toDo"
+    object_Todo.div_container_element.html.appendChild(object_Todo.button_checkItDone.html)
 
     // ICON_CHECK
     object_Todo.icon_check.html.className = "material-symbols-outlined"
     object_Todo.icon_check.html.innerText = "Check"
-    object_Todo.button_check.html.appendChild(object_Todo.icon_check.html)
+    object_Todo.button_checkItDone.html.appendChild(object_Todo.icon_check.html)
+
+    // BUTTON_CHECK_IT_DOING
+    object_Todo.button_checkItDoing.html.className = "button_checkItDoing"
+    object_Todo.div_container_element.html.appendChild(object_Todo.button_checkItDoing.html)
+
+    // ICON_LOAD_BAR
+    object_Todo.icon_loadBar.html.className = "gg-loadbar"
+    object_Todo.button_checkItDoing.html.appendChild(object_Todo.icon_loadBar.html)
+
 
     // BUTTON_DELATE
     object_Todo.button_delate.html.className = "button_delate_toDo"
@@ -78,8 +115,12 @@ const  Create_html_Todo_Element= (todo) =>{
 
 
     // EVENT ON CLICK BUTTON CHECK TODOLIST
-    object_Todo.button_check.html.addEventListener("click", (event) =>{
-        formatting_Html_ToDO(object_Todo)
+    object_Todo.button_checkItDone.html.addEventListener("click", (event) =>{
+        MarkToDoAsDONE(object_Todo)
+    })
+
+    object_Todo.button_checkItDoing.html.addEventListener("click", () =>{
+        MarkToDoAsDOING(object_Todo)
     })
 
     // EVENT ON CLICK BUTTON DELATE TODOLIST
