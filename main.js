@@ -6,7 +6,26 @@ const toDo_Container = document.getElementById("div_container_toDo_list")
 let toDo_list = []
 
 
-function Create_html_Todo_Element(todo){  
+
+//----------------------------------- FUNCTIO ------------------------------------------
+
+// FORMATTING THE STYLE OF THE TODO IN HTML
+const formatting_Html_ToDO = (toDo_obj) => {
+    toDo_obj.button_check.isDone = !toDo_obj.button_check.isDone
+        if(toDo_obj.button_check.isDone){
+            toDo_obj.div_container_element.html.style.backgroundColor =' rgba(143, 20, 20, 0.808)';
+            toDo_obj.paragraf.html.style.textDecoration ='line-through';
+            toDo_obj.icon_check.html.style.color ='#1a8111'
+        }
+        else{
+            toDo_obj.div_container_element.html.style.backgroundColor = '#3332325b';
+            toDo_obj.paragraf.html.style.textDecoration ='none';
+            toDo_obj.icon_check.html.style.color ='#9c9c9c'
+            }
+}
+
+// CREATING THE TODO ELMENT HTML
+const  Create_html_Todo_Element= (todo) =>{  
 
     let object_Todo = {
         div_container_element: {
@@ -60,21 +79,11 @@ function Create_html_Todo_Element(todo){
 
     // EVENT ON CLICK BUTTON CHECK TODOLIST
     object_Todo.button_check.html.addEventListener("click", (event) =>{
-        object_Todo.button_check.isDone = !object_Todo.button_check.isDone
-        if(object_Todo.button_check.isDone){
-            object_Todo.div_container_element.html.style.backgroundColor =' rgba(143, 20, 20, 0.808)';
-            object_Todo.paragraf.html.style.textDecoration ='line-through';
-            object_Todo.icon_check.html.style.color ='#1a8111'
-        }
-        else{
-            object_Todo.div_container_element.html.style.backgroundColor = '#3332325b';
-            object_Todo.paragraf.html.style.textDecoration ='none';
-            object_Todo.icon_check.html.style.color ='#9c9c9c'
-            }
+        formatting_Html_ToDO(object_Todo)
     })
 
     // EVENT ON CLICK BUTTON DELATE TODOLIST
-    object_Todo.button_delate.html.addEventListener("click", (event)=>{
+    object_Todo.button_delate.html.addEventListener("click", () =>{
         toDo_Container.removeChild(object_Todo.div_container_element.html)
         toDo_list.pop(object_Todo)
     })
@@ -82,6 +91,11 @@ function Create_html_Todo_Element(todo){
     return object_Todo
 }
 
+
+//-----------------------------------------------------------------------------------------------------
+
+
+// EVENT ON CLICK INPUT ENTER BUTTON
 button.addEventListener("click",(event)=>{
     // IS THE INPUT FILLED?
     if( input_filed.value != "" ){

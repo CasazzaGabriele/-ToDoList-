@@ -23,19 +23,18 @@
 
 .div_input_toDo{
     height: 4rem;
-    width: auto;
-    min-width: 10rem;
-    max-width: 50rem;
-    margin: auto;
+    width: 70%;
+    margin-block: auto;
+    margin-inline: 15%;
     align-content: center;
     display: flex;
 }
 
 .input_toDO{
-    margin-left: 5rem;
     margin-block: auto;
+    margin-left: 10%;
     height: 2.5rem;
-    width: 35rem;
+    width: 80%;
     border: none;
     border-radius: 0.5rem;
     background-color: #363636;
@@ -49,7 +48,7 @@
     margin-left: 0.5rem;
     margin-block:auto;
     height: 1.8rem;
-    width: 1.8rem;
+    width: 10%;
     border-radius: 0.5rem;
     border: none;
     background-color: #18181800;
@@ -67,9 +66,9 @@
 .div_container_toDo_list{
     min-height: 50rem;
     max-height: 55rem;
-    min-width: 30rem;
-    max-width: 60rem;
-    margin-inline: auto;
+    width: 80%;
+    margin-inline: 10%;
+    margin-block: 2rem;
     padding-block: 1rem;
     border-radius: 0.5rem;
     background-color: #1B1B1B;
@@ -83,6 +82,7 @@
 .div_toDo_component{
     height:auto;
     margin-inline: 1.5rem;
+    width: auto;
     display: flex;
     align-items: flex-start;
     flex-direction: row;
@@ -92,8 +92,8 @@
 
 .text_toDo{
     height:auto;
-    width: 46rem;
-    padding-right: 2rem;
+    width: 90%;
+    margin-right: 2rem;
     margin-left: 2rem;
     border-radius: 0.5rem;
     color: whitesmoke;
@@ -104,10 +104,10 @@
 
 .check_toDo{
     height: 1.5rem;
-    width: 1.5rem;
-    margin-inline: 0.8rem;
+    width:1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     margin-block: auto;
-
     border-radius: .5rem;
     border: none;
     background-color: #18181800;
@@ -125,7 +125,8 @@
     height: 1.5rem;
     width: 1.5rem;
     margin-block:auto;
-    margin-right: 2rem;
+    margin-left: 1rem;
+    margin-right:1.5rem;
     border: none;
     border-radius: 0.5rem;
     background-color: #3d3d3d00;
