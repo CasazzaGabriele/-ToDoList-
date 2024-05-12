@@ -5,9 +5,15 @@ const input_filed = document.getElementById("input_toDO")
 const toDo_Container = document.getElementById("div_container_toDo_list")
 let toDo_list = []
 
+const elementToDO = {
+    text: "";
+    isDoing: false,
+    isDone: false,
+}
 
 
-//----------------------------------- FUNCTIO ------------------------------------------
+
+//----------------------------------- Function ------------------------------------------
 
 // FORMATTING THE STYLE OF THE TODO IN HTML
 const MarkToDoAsDOING = (toDo_obj) => {
@@ -23,7 +29,8 @@ const MarkToDoAsDOING = (toDo_obj) => {
     else if((toDo_obj.button_checkItDone.isDone || !toDo_obj.button_checkItDone.isDone) && toDo_obj.button_checkItDoing.isItProcessing){
         toDo_obj.button_checkItDoing.isItProcessing = false
         toDo_obj.div_container_element.html.style.backgroundColor = " #3332325b"
-        toDo_obj.icon_loadBar.html.style.color = "#9b6520"
+        toDo_obj.icon_loadBar.html.style.color = "#61431d"
+        
     }
 
 
@@ -46,7 +53,7 @@ const MarkToDoAsDONE = (toDo_obj) => {
 }
 
 // CREATING THE TODO ELMENT HTML
-function  Create_html_Todo_Element(todo){  
+const  Create_html_Todo_Element = (todo)=> {  
 
     let object_Todo = {
         div_container_element: {
@@ -168,3 +175,4 @@ button.addEventListener("click",(event)=>{
     input_filed.value = ""
 });
      
+

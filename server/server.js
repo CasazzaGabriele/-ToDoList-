@@ -3,8 +3,6 @@ import express from 'express'
 const app = express()
 const port = 5000
 
-app.use(corse())
-app.use(bodyParser.jason())
 
 app.use((res,req,next)=>{
   console.log(" è arrivata una richiesta")

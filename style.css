@@ -74,7 +74,7 @@
     background-color: #1B1B1B;
     display: flex;
     gap: 1.5rem;
-    flex-direction: column;
+    flex-direction:column;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -123,13 +123,16 @@
 .button_checkItDoing{
     height: 1.5rem;
     width: 1.5rem;
-    margin: auto;
+    margin-inline: 1rem;
+    margin-block: auto;
     background-color: #3d3d3d00;
     border: none;
-    color: #c58838;
+    color: #61431d;
 }
 
-/* missing loadbar style*/
+.button_checkItDoing:hover{
+    color: #bb8135;
+}
 
 .button_delate_toDo{
     height: 1.5rem;
