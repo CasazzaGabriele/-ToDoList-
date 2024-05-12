@@ -6,7 +6,7 @@ const toDo_Container = document.getElementById("div_container_toDo_list")
 let toDo_list = []
 
 const elementToDO = {
-    text: "";
+    text: "",
     isDoing: false,
     isDone: false,
 }
