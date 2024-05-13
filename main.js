@@ -46,10 +46,10 @@ const MarkToDoAsDONE = (toDo_obj) => {
     }
 }
 
-// CREATING THE TODO ELMENT HTML
-const  Create_html_Todo_Element = (input_text)=> {  
 
-    let object_Todo = {
+// COSTRUCTOR FUNCTION
+const Create_todo_obj = (input_text) =>{
+    let todo_obj = {
         text: input_text,
         isDoing: false,
         isDone: false,
@@ -81,7 +81,12 @@ const  Create_html_Todo_Element = (input_text)=> {
             }
     }
 
-    
+    return todo_obj
+
+}
+
+//
+const  Show_todo_html = (object_Todo)=> {  
     // DIV_CONTAINER
     object_Todo.htmlCostructor.div_container_element.html.className ="div_toDo_component"
     toDo_Container.appendChild(object_Todo.htmlCostructor.div_container_element.html)
@@ -156,15 +161,16 @@ button.addEventListener("click",(event)=>{
             }
             // IF THERE ISN'T ANY ITEMS WITH THE SAME TEXT VAUE
             // CREATE A NEW ONE AND PUSHI IT INTO THE LIST
-            const newObject_Todo = Create_html_Todo_Element(input_filed.value)
+            const newObject_Todo = Create_todo_obj(input_filed.value)
             toDo_list.push(newObject_Todo)   
-
+            Show_todo_html(newObject_Todo)
         }
         // IS THELIST EMPTY
         // CREATE A NEW ONE AND PUSHI IT INTO THE LIST
         else{
-            var newObject_Todo = Create_html_Todo_Element(input_filed.value)
-            toDo_list.push(newObject_Todo) 
+            const newObject_Todo = Create_todo_obj(input_filed.value)
+            toDo_list.push(newObject_Todo)   
+            Show_todo_html(newObject_Todo)
         }
     }else{
         input_filed.value = ""
