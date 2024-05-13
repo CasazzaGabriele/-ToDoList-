@@ -1,7 +1,7 @@
 import express from 'express'
 
 const app = express()
-const port = 5000
+const port = 5500
 
 
 app.use((res,req,next)=>{
